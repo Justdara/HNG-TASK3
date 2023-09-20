@@ -1,10 +1,17 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./Login.css";
 import { auth } from "../firebase";
 
 const Login = () => {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+  const [error, setError] = useState("");
+
+  const extractErrorMessage = (errorMessage) => {
+    // Remove "Firebase: " and "auth/" from the error message
+    return errorMessage.replace("Firebase: ", "").replace("auth/", "");
+  };
+
   const signUp = (e) => {
     e.preventDefault();
     auth
@@ -30,7 +37,7 @@ const Login = () => {
         console.log(user);
       })
       .catch((err) => {
-        console.log(err);
+        setError(extractErrorMessage(err.message));
       });
   };
 
@@ -38,6 +45,7 @@ const Login = () => {
     <div className="login-card">
       <form>
         <h1>LOG IN</h1>
+        {error && <p className="error">{error}</p>}
         <input ref={emailRef} required type="email" placeholder="email" />
         <input
           ref={passwordRef}
@@ -45,8 +53,9 @@ const Login = () => {
           type="password"
           placeholder="password"
         />
+
         <h5>
-          New User?{" "}
+          New User?
           <span onClick={signUp} className="sign-up">
             Click here to sign up
           </span>

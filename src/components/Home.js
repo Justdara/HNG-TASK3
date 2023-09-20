@@ -1,172 +1,65 @@
-// import React, { useState } from "react";
-// import { auth } from "../firebase";
-// import Gallery from "./Gallery";
-
-// import "./Home.css";
-
-// const Home = () => {
-//   const [images, setImages] = useState([
-//     {
-//       name: "Image 1",
-//       url: "image1.jpg",
-//       tags: ["tag1", "tag2"],
-//     },
-//     {
-//       name: "Image 2",
-//       url: "image2.jpg",
-//       tags: ["tag2", "tag3"],
-//     },
-//     {
-//       name: "Image 3",
-//       url: "image3.jpg",
-//       tags: ["tag1", "tag3"],
-//     },
-//     {
-//       name: "Image 1",
-//       url: "image1.jpg",
-//       tags: ["tag1", "tag2"],
-//     },
-//     {
-//       name: "Image 2",
-//       url: "image2.jpg",
-//       tags: ["tag2", "tag3"],
-//     },
-//     {
-//       name: "Image 3",
-//       url: "image3.jpg",
-//       tags: ["tag1", "tag3"],
-//     },
-//     {
-//       name: "Image 1",
-//       url: "image1.jpg",
-//       tags: ["tag1", "tag2"],
-//     },
-//     {
-//       name: "Image 2",
-//       url: "image2.jpg",
-//       tags: ["tag2", "tag3"],
-//     },
-//     {
-//       name: "Image 3",
-//       url: "image3.jpg",
-//       tags: ["tag1", "tag3"],
-//     },
-//     {
-//       name: "Image 1",
-//       url: "image1.jpg",
-//       tags: ["tag1", "tag2"],
-//     },
-//     {
-//       name: "Image 2",
-//       url: "image2.jpg",
-//       tags: ["tag2", "tag3"],
-//     },
-//     {
-//       name: "Image 3",
-//       url: "image3.jpg",
-//       tags: ["tag1", "tag3"],
-//     },
-//     // Add more image objects here with names and tags
-//   ]);
-
-//   const [searchQuery, setSearchQuery] = useState("");
-
-//   // Function to filter images based on tags
-//   const filteredImages = images.filter((image) => {
-//     if (!searchQuery) return true; // If no search query, show all images
-//     return image.tags.includes(searchQuery);
-//   });
-
-//   return (
-//     <div className="home">
-//       <h1>Image Gallery</h1>
-//       <button onClick={() => auth.signOut()}>Log Out</button>
-//       <input
-//         type="text"
-//         placeholder="Search by tag"
-//         value={searchQuery}
-//         onChange={(e) => setSearchQuery(e.target.value)}
-//       />
-//       <Gallery images={filteredImages} setImages={setImages} />
-//     </div>
-//   );
-// };
-
-// export default Home;
 import React, { useState, useEffect } from "react";
 import { auth } from "../firebase";
 import Gallery from "./Gallery";
-import Loading from "./Loading"; // Import your Loading component
+import Loading from "./Loading";
 
 import "./Home.css";
 
 const Home = () => {
   const [images, setImages] = useState([]);
-  const [loading, setLoading] = useState(true); // Initial loading state
+  const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     setTimeout(() => {
       const fetchedImages = [
         {
-          name: "Image 1",
           url: "image1.jpg",
-          tags: ["tag1", "tag2"],
+          tags: ["tag1"],
         },
         {
-          name: "Image 2",
           url: "image2.jpg",
-          tags: ["tag2", "tag3"],
+          tags: ["tag2"],
         },
         {
-          name: "Image 3",
           url: "image3.jpg",
-          tags: ["tag1", "tag3"],
+          tags: ["tag3"],
         },
         {
-          name: "Image 1",
-          url: "image1.jpg",
-          tags: ["tag1", "tag2"],
+          url: "image4.jpg",
+          tags: ["tag4"],
         },
         {
-          name: "Image 2",
-          url: "image2.jpg",
-          tags: ["tag2", "tag3"],
+          url: "image5.jpg",
+          tags: ["tag5"],
         },
         {
-          name: "Image 3",
-          url: "image3.jpg",
-          tags: ["tag1", "tag3"],
+          url: "image6.jpg",
+          tags: ["tag6"],
         },
         {
-          name: "Image 1",
-          url: "image1.jpg",
-          tags: ["tag1", "tag2"],
+          url: "image7.jpg",
+          tags: ["tag7"],
         },
         {
-          name: "Image 2",
-          url: "image2.jpg",
-          tags: ["tag2", "tag3"],
+          url: "image8.jpg",
+          tags: ["tag8"],
         },
         {
-          name: "Image 3",
-          url: "image3.jpg",
-          tags: ["tag1", "tag3"],
+          url: "image9.jpg",
+          tags: ["tag9"],
         },
         {
-          name: "Image 1",
-          url: "image1.jpg",
-          tags: ["tag1", "tag2"],
+          url: "image10.jpg",
+          tags: ["tag10"],
         },
         {
-          name: "Image 2",
-          url: "image2.jpg",
-          tags: ["tag2", "tag3"],
+          url: "image11.jpg",
+          tags: ["tag11"],
         },
         {
-          name: "Image 3",
-          url: "image3.jpg",
-          tags: ["tag1", "tag3"],
+          url: "image12.jpg",
+          tags: ["tag12"],
         },
       ];
       setImages(fetchedImages);
@@ -182,14 +75,17 @@ const Home = () => {
 
   return (
     <div className="home">
-      <h1>Image Gallery</h1>
-      <button onClick={() => auth.signOut()}>Log Out</button>
+      <h2>Image Gallery</h2>
+
       <input
         type="text"
-        placeholder="Search by tag"
+        placeholder="Search by tags"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
+      <button className="logout" onClick={() => auth.signOut()}>
+        Log Out
+      </button>
       {loading ? (
         <Loading />
       ) : (

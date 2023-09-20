@@ -4,13 +4,29 @@
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
   gap: 10px;
   padding: 20px;
-  background-color: aqua;
 }
 
 .gallery img {
-  max-width: 100%;
-  height: auto;
+  width: 200px;
+  height: 300px;
+  border: 10px solid #8db5b8;
+  border-radius: 20px;
+}
+.logout {
+  margin-left: 30px;
+}
+h2 {
+  color: white;
+}
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 images per row for smaller screens */
+  }
 }

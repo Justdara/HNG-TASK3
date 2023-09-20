@@ -20,8 +20,7 @@ const DraggableImage = ({ image, index, moveImage }) => {
   return (
     <div ref={(node) => ref(drop(node))} style={{ cursor: "grab" }}>
       <img src={image.url} alt={image.name} style={{ maxWidth: "100%" }} />
-      <p>Name: {image.name}</p>
-      <p>Tags: {image.tags.join(", ")}</p>
+      <p style={{ color: "white" }}>Tag: {image.tags}</p>
     </div>
   );
 };

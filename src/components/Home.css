@@ -22,6 +22,12 @@
 h2 {
   color: white;
 }
+.no-results {
+  color: white;
+}
+p {
+  color: red;
+}
 @media (max-width: 768px) {
   .gallery {
     grid-template-columns: repeat(

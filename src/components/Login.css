@@ -53,3 +53,14 @@ span {
   margin-top: 0;
   color: red;
 }
+.password-input {
+  position: relative;
+}
+
+.password-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}

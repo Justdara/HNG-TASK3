@@ -31,15 +31,15 @@ Before you begin, ensure you have met the following requirements:
 
 1. Clone the repository to your local machine:
 
-git clone https://github.com/yourusername/react-firebase-image-gallery.git
+   git clone https://github.com/yourusername/react-firebase-image-gallery.git
 
 2. Change into the project directory:
 
-cd react-firebase-image-gallery
+   cd react-firebase-image-gallery
 
 3. Install project dependencies:
 
-npm install
+   npm install
 
 ## Configuration
 
@@ -47,14 +47,14 @@ npm install
 
 2. In the Firebase project settings, navigate to the "Project settings" and find your Firebase SDK configuration object. It will look something like this:
 
-const firebaseConfig = {
-apiKey: "YOUR_API_KEY",
-authDomain: "YOUR_AUTH_DOMAIN",
-projectId: "YOUR_PROJECT_ID",
-storageBucket: "YOUR_STORAGE_BUCKET",
-messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-appId: "YOUR_APP_ID"
-};
+   const firebaseConfig = {
+   apiKey: "YOUR_API_KEY",
+   authDomain: "YOUR_AUTH_DOMAIN",
+   projectId: "YOUR_PROJECT_ID",
+   storageBucket: "YOUR_STORAGE_BUCKET",
+   messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+   appId: "YOUR_APP_ID"
+   };
 
 3.Copy this configuration object.
 
@@ -64,7 +64,7 @@ appId: "YOUR_APP_ID"
 
 1. Start the development server:
 
-npm start
+   npm start
 
 2. Register and authenticate with your Firebase authentication provider.
 
@@ -88,8 +88,8 @@ If you'd like to contribute to this project, please follow these guidelines:
 
 5. Push your branch to your fork:
 
-git push origin feature/your-feature-name
+   git push origin feature/your-feature-name
 
 6. Create a pull request against the main repository's main branch.
 
-Happy coding!
+Happy coding! 🚀

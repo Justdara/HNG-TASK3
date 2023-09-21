@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { useDrag, useDrop } from "react-dnd";
 
 const DraggableImage = ({ image, index, moveImage }) => {
-  const [, ref] = useDrag({
+  const [isDragging, setIsDragging] = useState(false);
+  const ref = useRef(null);
+
+  const [, drag] = useDrag({
     type: "IMAGE",
     item: { index },
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
   });
 
   const [, drop] = useDrop({
@@ -17,15 +23,26 @@ const DraggableImage = ({ image, index, moveImage }) => {
     },
   });
 
+  // Touch event handlers
   const handleTouchStart = (e) => {
-    e.preventDefault(); // Prevent default touch behavior
+    e.preventDefault();
+    setIsDragging(true);
+    drag(e);
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
   };
 
   return (
     <div
       onTouchStart={handleTouchStart}
       ref={(node) => ref(drop(node))}
-      style={{ cursor: "grab" }}
+      onTouchEnd={handleTouchEnd}
+      style={{
+        cursor: isDragging ? "grabbing" : "grab",
+        touchAction: "manipulation",
+      }}
     >
       <img src={image.url} alt={image.name} style={{ maxWidth: "100%" }} />
       <p style={{ color: "white" }}>{image.tags}</p>

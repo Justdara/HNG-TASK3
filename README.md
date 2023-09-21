@@ -17,6 +17,7 @@ Live Demo: [Image Gallery App](http://localhost:3000)
 - User authentication using Firebase Authentication.
 - Drag-and-drop images
 - Responsive design
+- Search function for image tags
 
 ## Prerequisites
 

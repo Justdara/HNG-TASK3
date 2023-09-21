@@ -2,7 +2,7 @@
 
 This project is a drag-and-drop image gallery application built with React, Firebase, React-Dnd and Material-UI (MUI). It allows users to securely authenticate and rearrange images using a simple drag-and-drop interface. This README file will guide you through setting up and running the application.
 
-Live Demo: [Image Gallery App](http://localhost:3000)
+Live Demo: [Image Gallery App](https://imagegallery-hng.netlify.app/)
 
 - [Features](#features)
   - [Prerequisites](#prerequisites)

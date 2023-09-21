@@ -17,8 +17,16 @@ const DraggableImage = ({ image, index, moveImage }) => {
     },
   });
 
+  const handleTouchStart = (e) => {
+    e.preventDefault(); // Prevent default touch behavior
+  };
+
   return (
-    <div ref={(node) => ref(drop(node))} style={{ cursor: "grab" }}>
+    <div
+      onTouchStart={handleTouchStart}
+      ref={(node) => ref(drop(node))}
+      style={{ cursor: "grab" }}
+    >
       <img src={image.url} alt={image.name} style={{ maxWidth: "100%" }} />
       <p style={{ color: "white" }}>{image.tags}</p>
     </div>

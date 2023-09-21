@@ -31,7 +31,7 @@ Before you begin, ensure you have met the following requirements:
 
 1. Clone the repository to your local machine:
 
-   git clone https://github.com/yourusername/react-firebase-image-gallery.git
+   git clone https://github.com/Justdara/HNG-TASK3.git
 
 2. Change into the project directory:
 
@@ -56,9 +56,9 @@ Before you begin, ensure you have met the following requirements:
    appId: "YOUR_APP_ID"
    };
 
-3.Copy this configuration object.
+3. Copy this configuration object.
 
-4.Enable Firebase Authentication providers (e.g., Email/Password, Google, etc.) as per your requirements in the Firebase Console.
+4. Enable Firebase Authentication providers (e.g., Email/Password, Google, etc.) as per your requirements in the Firebase Console.
 
 ## Usage
 

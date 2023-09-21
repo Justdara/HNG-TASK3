@@ -35,4 +35,8 @@ p {
       1fr
     ); /* 2 images per row for smaller screens */
   }
+  .gallery img {
+    width: 150px;
+    height: 200px;
+  }
 }
